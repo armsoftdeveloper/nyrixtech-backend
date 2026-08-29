@@ -33,6 +33,9 @@ class TrafficAttributionMixin(models.Model):
     utm_campaign = models.CharField(max_length=150, blank=True)
     utm_content = models.CharField(max_length=150, blank=True)
     utm_term = models.CharField(max_length=150, blank=True)
+    # Google Ads click id — lets a later CRM stage change (qualified, won) be uploaded back to
+    # Google Ads as an offline conversion against the original ad click that produced this lead.
+    gclid = models.CharField(max_length=255, blank=True)
 
     class Meta:
         abstract = True

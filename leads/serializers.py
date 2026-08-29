@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Lead, ContactRequest
 
-UTM_FIELDS = ["traffic_source", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]
+UTM_FIELDS = ["traffic_source", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid"]
 
 
 class ContactRequestSerializer(serializers.ModelSerializer):

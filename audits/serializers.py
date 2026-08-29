@@ -9,7 +9,7 @@ class ITAuditRequestSerializer(serializers.ModelSerializer):
             "id", "company_name", "contact_person", "email", "phone",
             "employee_count", "infrastructure", "problems", "problems_other",
             "preferred_contact_method", "status", "created_at",
-            "traffic_source", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+            "traffic_source", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid",
         ]
         read_only_fields = ["id", "status", "created_at"]
 

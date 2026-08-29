@@ -47,6 +47,19 @@ class ITAuditSubmissionTests(APITestCase):
         self.assertEqual(audit.lead.traffic_source, "google_ads")
         self.assertEqual(audit.lead.utm_campaign, "spring_launch")
 
+    def test_gclid_propagates_to_lead(self):
+        """The Google Ads click id must survive submission → Lead so a later CRM stage
+        change (qualified, won) can be uploaded back to Google Ads as an offline conversion."""
+        response = self.client.post(
+            "/api/audits/",
+            _payload(gclid="Cj0KCQjw_test_click_id_123"),
+            format="json",
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        audit = ITAuditRequest.objects.get(email="audit@example.com")
+        self.assertEqual(audit.gclid, "Cj0KCQjw_test_click_id_123")
+        self.assertEqual(audit.lead.gclid, "Cj0KCQjw_test_click_id_123")
+
     def test_duplicate_submission_within_window_does_not_create_second_lead(self):
         first = self.client.post("/api/audits/", _payload(), format="json")
         second = self.client.post("/api/audits/", _payload(contact_person="Jane Again"), format="json")

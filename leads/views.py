@@ -31,6 +31,7 @@ class ContactRequestViewSet(viewsets.ModelViewSet):
             utm_campaign=contact.utm_campaign,
             utm_content=contact.utm_content,
             utm_term=contact.utm_term,
+            gclid=contact.gclid,
         )
         contact.lead = lead
         contact.save(update_fields=["lead"])

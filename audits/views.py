@@ -63,6 +63,7 @@ class ITAuditRequestViewSet(viewsets.ModelViewSet):
             utm_campaign=audit.utm_campaign,
             utm_content=audit.utm_content,
             utm_term=audit.utm_term,
+            gclid=audit.gclid,
         )
         audit.lead = lead
         audit.save(update_fields=["lead"])
