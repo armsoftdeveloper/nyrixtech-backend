@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Access Denied | NYRIXTECH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink-900: #F6F5F3;
+    --ink-800: #FFFFFF;
+    --line-800: #DDE0E4;
+    --mist-100: #03060B;
+    --mist-400: #45556C;
+    --mist-500: #64748B;
+    --signal-400: #FB7C00;
+    --signal-500: #E97F00;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--ink-900);
+    color: var(--mist-400);
+    font-family: "Outfit", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    max-width: 460px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-family: "Outfit", monospace;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--signal-400);
+    margin: 0 0 12px;
+  }
+  .code {
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 1;
+    color: var(--mist-100);
+    margin: 0;
+    letter-spacing: -0.03em;
+  }
+  h1 {
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.2;
+    color: var(--mist-100);
+    margin: 16px 0 10px;
+    letter-spacing: -0.01em;
+  }
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 28px;
+  }
+  .actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  a.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 10px;
+    transition: opacity 0.15s ease;
+  }
+  a.btn:hover { opacity: 0.85; }
+  a.btn-primary {
+    background: var(--signal-500);
+    color: #fff;
+  }
+  a.btn-secondary {
+    background: var(--ink-800);
+    color: var(--mist-100);
+    border: 1px solid var(--line-800);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <p class="eyebrow">NYRIXTECH</p>
+    <p class="code">403</p>
+    <h1>Access denied</h1>
+    <p>You don't have permission to view this page.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://nyrix.tech/">Back to homepage</a>
+      <a class="btn btn-secondary" href="https://nyrix.tech/contact">Contact us</a>
+    </div>
+  </div>
+</body>
+</html>
