@@ -174,6 +174,11 @@ CSRF_TRUSTED_ORIGINS = config(
 )
 
 # --- Security (production) ---
+# Gunicorn sits behind LiteSpeed's reverse proxy and only accepts connections from
+# 127.0.0.1, so trusting X-Forwarded-Proto here is safe — it's set by our own proxy,
+# not by the client. Without this, SECURE_SSL_REDIRECT would redirect-loop forever
+# since gunicorn itself only ever sees plain HTTP from the proxy.
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SECURE_SSL_REDIRECT = config("SECURE_SSL_REDIRECT", default=False, cast=bool)
 SESSION_COOKIE_SECURE = config("SESSION_COOKIE_SECURE", default=not DEBUG, cast=bool)
 CSRF_COOKIE_SECURE = config("CSRF_COOKIE_SECURE", default=not DEBUG, cast=bool)
